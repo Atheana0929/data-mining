@@ -42,7 +42,7 @@ dEp_c <- ( EP(S+h, K, r, T0, sigma) -EP(S-h,K, r, T0, sigma))/h
 
 risk_p <- function(w, rho, sigma_x, sigma_y){
   
-  sigma2_p <- w^2*sigma_x^2+(1+w)^2*sigma_y^2+
+  sigma2_p <- w^2*sigma_x^2+(1-w)^2*sigma_y^2+
               2*w*(1-w)*rho*sigma_x*sigma_y
   return( sigma2_p)
   
@@ -72,7 +72,7 @@ weight_y <- 1-weight_x
 
 risk_p <- function(w, rho, sigma_x, sigma_y){
   
-  sigma2_p <- w^2*sigma_x^2+(1+w)^2*sigma_y^2+
+  sigma2_p <- w^2*sigma_x^2+(1-w)^2*sigma_y^2+
     2*w*(1-w)*rho*sigma_x*sigma_y
   return( sigma2_p)
   
